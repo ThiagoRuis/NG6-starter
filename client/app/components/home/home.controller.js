@@ -30,9 +30,8 @@ class HomeController {
   }
 
   saveText() {
-    debugger;
     let target = this.changingElement;
-    let editedText = $sce.trustAsHtml($(".ql-editor")[0].innerHTML);
+    let editedText = $(".ql-editor")[0].innerText;
 
     if(target === 'topText') {
       this.topText = editedText;
@@ -47,6 +46,16 @@ class HomeController {
   closeEditor() {
     $("#textModal div.modal-body")[0].innerHTML = '<div id="textEditor"></div>';
     $('#textModal').modal('hide');
+  }
+
+  defineSmallImage(image) {
+    this.smallImageSelected = image;
+    $('#smallPictureModal').modal('hide');
+  }
+
+  defineLargeImage(image) {
+    this.largeImageSelected = image;
+    $('#largePictureModal').modal('hide');
   }
 }
 

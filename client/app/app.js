@@ -7,11 +7,13 @@ import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import 'normalize.css';
+import ngSanitize from "angular-sanitize";
 
 angular.module('app', [
     uiRouter,
     Common,
-    Components
+    Components,
+    ngSanitize
   ])
   .config(($locationProvider) => {
     "ngInject";
